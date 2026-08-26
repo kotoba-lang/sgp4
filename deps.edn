@@ -1,0 +1,10 @@
+{:paths ["src"]
+ ;; Zero dependencies, and that is the point: a propagator that a browser,
+ ;; a Worker, nbb and the JVM can all run is one that has no host in it.
+ :deps {}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}}}
