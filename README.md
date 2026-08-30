@@ -158,6 +158,26 @@ propagator, not this the wrong rotation.
 catalogue is published against, so no origin prefix applies and no role
 prefix does either. It is a reusable library and takes the bare name.
 
+## Running it
+
+[`docs/operator-quickstart.md`](docs/operator-quickstart.md) goes from an
+empty directory to a position, with `scripts/where_is.cljs` as the entry
+point:
+
+```
+$ nbb --classpath src scripts/where_is.cljs 25544
+object    ISS (ZARYA)  (NORAD 25544)
+at        2026-08-30T23:37:22.447Z
+lat/lon   -8.7062  143.2950
+altitude  422.6 km
+speed     7.360 km/s
+epoch age 0.49 d
+```
+
+It exits `0` for an answer, `1` for a refusal and `2` when the question
+could not be asked at all — because a shell reads exit status, and a
+refusal that exits `0` is indistinguishable from an answer.
+
 ## Regenerating the fixtures
 
 See [`scripts/regenerate-golden.md`](scripts/regenerate-golden.md), which
