@@ -8,7 +8,7 @@
   should have compared two epochs compared one against itself and passed.
   That happened. Hence the explicit case, and the `number?` guard in
   sgp4.core-test."
-  (:require ["fs" :as fs] [clojure.string :as str]))
+  (:require ["fs" :as fs] [kotoba.lang.text :as str]))
 
 (def header
   {"golden.edn"
@@ -23,7 +23,7 @@
 (defn kebab [k]
   (if (= k "jdsatepochF")
     "jdsatepoch-frac"
-    (-> k (str/replace #"([a-z0-9])([A-Z])" "$1-$2") (str/replace "_" "-") str/lower-case)))
+    (-> k (str/replace #"([a-z0-9])([A-Z])" "$1-$2") (str/replace "_" "-") str/lower)))
 
 (defn ->edn [v indent]
   (let [sp (apply str (repeat indent "  "))
