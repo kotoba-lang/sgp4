@@ -15,7 +15,7 @@
   `{:ok? false :error <keyword> :detail <string>}`, never an exception.
   A caller ingesting ten thousand TLEs must be able to drop the four bad
   ones and record why, without a try/catch per line."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [sgp4.time :as t]))
 
 (def two-pi (* 2.0 Math/PI))
