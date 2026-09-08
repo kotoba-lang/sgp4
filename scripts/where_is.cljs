@@ -21,7 +21,7 @@
             [sgp4.frames :as frames]
             [sgp4.time :as time]
             [sgp4.tle :as tle]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             ["fs" :as fs]))
 
 (def celestrak "https://celestrak.org/NORAD/elements/gp.php")
