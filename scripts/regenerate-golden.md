@@ -9,8 +9,8 @@ python3 -m venv /tmp/sgp4-oracle
 /tmp/sgp4-oracle/bin/pip install sgp4 pyproj
 /tmp/sgp4-oracle/bin/python scripts/gen_golden.py       > /tmp/g.json
 /tmp/sgp4-oracle/bin/python scripts/gen_frames_golden.py > /tmp/f.json
-nbb scripts/json_to_edn.cljk /tmp/g.json test/sgp4/golden.edn
-nbb scripts/json_to_edn.cljk /tmp/f.json test/sgp4/frames_golden.edn
+kbb --backend sci scripts/json_to_edn.cljk /tmp/g.json test/sgp4/golden.edn
+kbb --backend sci scripts/json_to_edn.cljk /tmp/f.json test/sgp4/frames_golden.edn
 ```
 
 | fixture | oracle | what it bounds |

@@ -73,7 +73,7 @@ before you go on.
 ## 2. Ask where something is
 
 ```
-$ nbb --classpath src scripts/where_is.cljk 25544
+$ kbb --backend sci --classpath src scripts/where_is.cljk 25544
 object    ISS (ZARYA)  (NORAD 25544)
 at        2026-08-30T23:30:26.196Z
 lat/lon   12.4173  128.1512
@@ -89,7 +89,7 @@ crosses that much of the Earth in under a minute.
 For a fixed instant, pass `--at`:
 
 ```
-$ nbb --classpath src scripts/where_is.cljk 25544 --at 2026-09-01T12:00:00Z
+$ kbb --backend sci --classpath src scripts/where_is.cljk 25544 --at 2026-09-01T12:00:00Z
 object    ISS (ZARYA)  (NORAD 25544)
 at        2026-09-01T12:00:00.000Z
 lat/lon   6.5457  126.9012
@@ -108,7 +108,7 @@ group, not just one object:
 
 ```
 $ curl -sS --fail -o iss.tle 'https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=tle'
-$ nbb --classpath src scripts/where_is.cljk --file iss.tle
+$ kbb --backend sci --classpath src scripts/where_is.cljk --file iss.tle
 ```
 
 **`--fail` is not optional.** Without it, an error response is written into
@@ -128,7 +128,7 @@ writing this page — so a fetch that worked a minute ago is not a fetch that
 works now. The tool refuses a poisoned file rather than parsing past it:
 
 ```
-$ nbb --classpath src scripts/where_is.cljk --file iss.tle ; echo "exit=$?"
+$ kbb --backend sci --classpath src scripts/where_is.cljk --file iss.tle ; echo "exit=$?"
 REFUSED :tle/orphan-line -- line is neither a TLE line 1 nor followed by one
 exit=1
 ```
@@ -157,7 +157,7 @@ $ python3 -c "
 l = open('iss.tle').read().replace(chr(13),'').rstrip().split(chr(10))
 l[1] = l[1][:-1] + str((int(l[1][-1]) + 1) % 10)
 open('mixed.tle','w').write(open('iss.tle').read() + chr(10).join(l) + chr(10))"
-$ nbb --classpath src scripts/where_is.cljk --file mixed.tle >out 2>err ; echo "exit=$?"
+$ kbb --backend sci --classpath src scripts/where_is.cljk --file mixed.tle >out 2>err ; echo "exit=$?"
 exit=1
 
 $ cat out
