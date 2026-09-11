@@ -161,11 +161,11 @@ prefix does either. It is a reusable library and takes the bare name.
 ## Running it
 
 [`docs/operator-quickstart.md`](docs/operator-quickstart.md) goes from an
-empty directory to a position, with `scripts/where_is.cljs` as the entry
+empty directory to a position, with `scripts/where_is.cljk` as the entry
 point:
 
 ```
-$ nbb --classpath src scripts/where_is.cljs 25544
+$ nbb --classpath src scripts/where_is.cljk 25544
 object    ISS (ZARYA)  (NORAD 25544)
 at        2026-08-30T23:37:22.447Z
 lat/lon   -8.7062  143.2950
