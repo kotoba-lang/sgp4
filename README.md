@@ -165,7 +165,7 @@ empty directory to a position, with `scripts/where_is.cljk` as the entry
 point:
 
 ```
-$ nbb --classpath src scripts/where_is.cljk 25544
+$ kbb --backend sci --classpath src scripts/where_is.cljk 25544
 object    ISS (ZARYA)  (NORAD 25544)
 at        2026-08-30T23:37:22.447Z
 lat/lon   -8.7062  143.2950

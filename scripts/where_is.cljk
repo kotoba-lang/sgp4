@@ -13,9 +13,9 @@
 ;;      readable input, bad arguments. Not 1, because "we did not look" must
 ;;      not read as "we looked and that orbit is unsupported".
 ;;
-;;   nbb --classpath src scripts/where_is.cljk 25544
-;;   nbb --classpath src scripts/where_is.cljk 25544 --at 2026-09-01T12:00:00Z
-;;   nbb --classpath src scripts/where_is.cljk --file iss.tle
+;;   kbb --backend sci --classpath src scripts/where_is.cljk 25544
+;;   kbb --backend sci --classpath src scripts/where_is.cljk 25544 --at 2026-09-01T12:00:00Z
+;;   kbb --backend sci --classpath src scripts/where_is.cljk --file iss.tle
 (ns where-is
   (:require [sgp4.core :as sgp4]
             [sgp4.frames :as frames]
