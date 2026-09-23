@@ -2,7 +2,7 @@
   "Frame conversions against PROJ and against the Vallado GMST, plus the
   round trip that makes the ellipsoid arithmetic falsifiable."
   (:require [kotoba.test :refer [deftest is testing]]
-            [clojure.edn :as edn]
+            [kotoba.lang.edn :as edn]
             [sgp4.frames :as f]
             [sgp4.time :as t]
             [sgp4.core :as sgp4]
