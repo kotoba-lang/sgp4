@@ -1,6 +1,6 @@
 (ns sgp4.tle-test
   "The parser, and specifically the ways a TLE parser fails *quietly*."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.lang.text :as str]
             [sgp4.tle :as tle]
             [sgp4.fixtures :as fx]))

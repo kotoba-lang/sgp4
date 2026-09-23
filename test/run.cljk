@@ -10,7 +10,7 @@
   2. **It sets a non-zero exit code on failure.** `cljs.test` reports to
      stdout; a caller reading `$?` sees 0 either way unless something does
      this. A suite whose red is invisible is not a suite."
-  (:require [clojure.test :as t]
+  (:require [kotoba.test :as t]
             [sgp4.tle-test]
             [sgp4.core-test]
             [sgp4.time-test]

@@ -1,5 +1,5 @@
 (ns sgp4.time-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [sgp4.time :as t]))
 
 (deftest tle-epoch-pivot-is-the-format-s-not-a-guess

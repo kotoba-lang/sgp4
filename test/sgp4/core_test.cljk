@@ -6,7 +6,7 @@
   numbers would stay green through any change that is self-consistent, and
   the thing worth knowing about a propagator is whether it agrees with the
   reference one."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [clojure.edn :as edn]
             [sgp4.core :as sgp4]
             [sgp4.tle :as tle]
